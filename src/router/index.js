@@ -1,21 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-import table from './modules/table/index' //表格模块
+import commons from './modules/commons/index' //组件模块
 
 const routes = [{
         path: '/',
         component: resolve => require(['@/layout'], resolve),
         title: "首页",
-        redirect: '/table',
+        redirect: '/commons/defaults',
         hidden: false,
     },
     {
-        path: '/table',
+        path: '/commons',
         component: resolve => require(['@/layout'], resolve),
-        title: "表格",
+        title: "组件",
         hidden: true,
-        children:table
+        children:commons
     }
 ]
 

@@ -1,7 +1,7 @@
-let defaults = {
+let table = {
     path: 'defaults',
-    name: '通用表格',
-    title: "通用表格",
+    name: '表格',
+    title: "表格",
     component: resolve => require(['@/views/table'], resolve),
     hidden: true,
     redirect: '',
@@ -10,7 +10,7 @@ let defaults = {
             name: "通用表格",
             route: "platform.admin.partner.index",
             hidden: true,
-            path: "infoadmin"
+            path: "defaults"
         }]
     },
     children: [
@@ -18,5 +18,5 @@ let defaults = {
     ]
 }
 export default {
-    defaults
+    table
 }

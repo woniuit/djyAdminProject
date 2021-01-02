@@ -43,7 +43,7 @@
             handleClick(val) {
                 this.$store.commit("sidebar/onActiveName", val.index);
                 this.$emit("handleClick", val);
-                window.sessionStorage.removeItem("page");
+                // window.sessionStorage.removeItem("page");
             }
         },
         components: {}
