@@ -1,0 +1,580 @@
+/* 初始化CSS */
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset,
+img {
+    border: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    display: block;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "微软雅黑", "Arial Narrow";
+}
+
+input::-moz-focus-inner {
+    border: none;
+    padding: 0;
+}
+
+select,
+input {
+    vertical-align: middle;
+}
+
+select,
+input,
+textarea {
+    font-size: 12px;
+    margin: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="button"],
+textarea,
+button {
+    outline-style: none;
+    -webkit-appearance: none;
+}
+
+textarea {
+    resize: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+body {
+    color: #333333;
+    font-family: "微软雅黑", "Arial Narrow", HELVETICA;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #ffffff;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearit {
+    clear: both;
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:visited {
+    color: #666;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.green {
+    color: #4BBD00;
+}
+
+.red {
+    color: red !important;
+}
+
+.c-gray {
+    color: #c0c4cc !important;
+}
+
+.mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.row-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #f8f8f9;
+}
+
+.m-wrapper {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.gary-wrapper {
+    background: #f8f8f9;
+    padding-top: 10px;
+}
+
+.loading-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.w50 {
+    width: 50px !important;
+}
+
+.w80 {
+    width: 80px !important;
+}
+
+.w100 {
+    width: 100px !important;
+}
+
+.w110 {
+    width: 110px !important;
+}
+
+.w130 {
+    width: 130px !important;
+}
+
+.w150 {
+    width: 150px !important;
+}
+
+.w170 {
+    width: 170px !important;
+}
+
+.w200 {
+    width: 200px !important;
+}
+
+.w250 {
+    width: 250px !important;
+}
+
+.w300 {
+    width: 300px !important;
+}
+
+.w350 {
+    width: 350px !important;
+}
+
+.w400 {
+    width: 400px !important;
+}
+
+.w450 {
+    width: 450px !important;
+}
+
+.w500 {
+    width: 500px !important;
+}
+
+.w550 {
+    width: 550px !important;
+}
+
+.w600 {
+    width: 600px !important;
+}
+
+.w800 {
+    width: 800px !important;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.w700 {
+    width: 700px !important;
+}
+
+.marginRight {
+    margin-right: 10px;
+}
+
+.text-nowrap {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.margin-top-form {
+    margin-top: 30px;
+}
+
+/* element样式重置 */
+/* 解决element-ui的table表格控件表头与内容列不对齐问题 */
+body .el-table th.gutter {
+    display: table-cell !important;
+}
+
+.table-form label {
+    color: #99a9bf;
+    text-align: right !important;
+    /*margin-right: 5px;*/
+    line-height: 22px;
+    font-size: 12px;
+}
+
+.el-radio-button__orig-radio:disabled:checked+.el-radio-button__inner {
+    background-color: #4BBD00;
+}
+
+.el-radio-button__orig-radio:disabled+.el-radio-button__inner {
+    /* color: #ffffff; */
+    cursor: not-allowed;
+    background-image: none;
+    background-color: #FFF;
+    border-color: #EBEEF5;
+    box-shadow: none;
+}
+
+.table-form div {
+    line-height: 22px;
+    font-size: 12px;
+}
+
+.el-table td {
+    word-wrap: break-word;
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+    border-color: #4BBD00 !important;
+    background: #4BBD00 !important;
+}
+
+.el-radio__input.is-checked+.el-radio__label {
+    color: #4BBD00 !important;
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #4BBD00 !important;
+    border-color: #4BBD00 !important;
+}
+
+.el-checkbox-button.is-checked .el-checkbox-button__inner {
+    color: #FFF;
+    background-color: #4BBD00;
+    border-color: #4BBD00;
+    box-shadow: -1px 0 0 0 #93d766;
+    cursor: not-allowed;
+}
+
+
+.el-table .cell,
+.el-table--border td:first-child .cell,
+.el-table--border th:first-child .cell {
+    padding-left: 5px;
+}
+
+.el-table th>.cell {
+    padding-right: 0 !important;
+}
+
+.el-table th>.cell {
+    padding-left: 0 !important;
+}
+
+.el-table .cell {
+    padding-right: 5px;
+}
+
+.text-left {
+    text-align: left !important;
+    padding-left: 10px;
+}
+
+.el-table .caret-wrapper {
+    width: 12px;
+}
+
+.el-table .sort-caret {
+    left: 1px;
+}
+
+.el-table th.gutter,
+.el-table colgroup.gutter {
+    display: block !important;
+    width: 17px !important;
+}
+
+.el-table__expanded-cell[class*=cell] {
+    padding: 12px;
+}
+
+.el-table__expanded-cell {
+    background-color: #f8f8f9;
+}
+
+.el-table__expanded-cell:hover {
+    background-color: #f8f8f9 !important;
+}
+
+/* 表格升降序样式 S */
+.el-table .asc .sort-caret.ascending {
+    border-bottom-color: #67c23a !important;
+}
+
+.el-table .asc .sort-caret.descending {
+    border-top-color: #C0C4CC !important;
+}
+
+.el-table .desc .sort-caret.descending {
+    border-top-color: #67c23a !important;
+}
+
+.el-table .desc .sort-caret.ascending {
+    border-bottom-color: #C0C4CC !important;
+}
+
+/* 表格升降序样式 E */
+.el-link.el-link--default {
+    color: #4bbd00;
+}
+
+.el-form-item--mini.el-form-item,
+.el-form-item--small.el-form-item {
+    margin-bottom: 15px;
+}
+
+.el-dialog__body {
+    padding: 10px 20px;
+}
+
+.el-date-table,
+.el-table th {
+    background: #e7e7e7 !important;
+    color: #333 !important;
+    border-color: #ddd;
+    font-weight: bold;
+}
+
+.el-table .highlight-row {
+    background: #F7FDEA !important;
+}
+
+.el-table .click-row,
+.el-table .click-row:hover,
+.el-table .click-row:hover>td,
+.el-table .click-row.hover-row,
+.el-table .click-row.hover-row>td {
+    background: #CCCCFF !important;
+}
+
+.el-table .highlight-row-total {
+    background: #F5F7FA !important;
+    color: #606266 !important;
+}
+
+.group .el-tabs__nav-scroll {
+    margin-left: 25px;
+}
+
+.group .el-tabs__content {
+    margin: 15px 25px;
+}
+
+.el-checkbox__label {
+    display: inline-block;
+    padding-left: 10px;
+    line-height: 19px;
+    font-size: 12px;
+}
+
+.el-form-item__label {
+    text-align: right;
+    vertical-align: middle;
+    float: left;
+    font-size: 12px;
+    color: #606266;
+    padding: 0 12px 0 0;
+    box-sizing: border-box;
+}
+
+.el-header {
+    padding: 0;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.el-submenu__title {
+    font-size: 14px;
+    color: #303133;
+    padding: 0 40px;
+    cursor: pointer;
+    transition: border-color .3s, background-color .3s, color .3s;
+    box-sizing: border-box;
+}
+
+/* 单行radio */
+.m-radio {
+    display: block;
+    line-height: 26px;
+}
+
+/*更新日志*/
+.upload-timeline .el-timeline-item__timestamp.is-top {
+    font-size: 24px;
+}
+
+.upload-timeline .el-timeline-item__wrapper {
+    top: 0px;
+}
+
+.upload-timeline .el-timeline-item__node--normal {
+    left: 0;
+    width: 14px;
+    height: 14px;
+    top: 9px;
+}
+
+.noscroll::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.noscroll::-webkit-scrollbar-button {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.noscroll::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.noscroll::-webkit-scrollbar-track-piece {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.noscroll::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.noscroll::-webkit-scrollbar-corner {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.noscroll::-webkit-scrollbar-resizer {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.noscroll::-webkit-scrollbar {
+    width: 2;
+    height: 10px;
+}
+
+.myscroll::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 10px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+
+.myscroll::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #e2e2e2;
+}
+
+.myscroll::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.el-form-items {
+    display: inline-block;
+}
+
+.app-container {
+    padding: 12px;
+    text-align: left;
+}
