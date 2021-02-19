@@ -1,5 +1,5 @@
 const state = {
-    activeName: 0, // tabs三级菜单高亮
+    activeName:localStorage.getItem('tabactiveName')|| 0, // tabs三级菜单高亮
     isCollapseds: false, //折叠菜单
     leftmenu: JSON.parse(localStorage.getItem('rightList') || '[]')
 }
@@ -15,6 +15,7 @@ const mutations = {
     },
     onActiveName(state, activeName) {
         state.activeName = activeName
+        localStorage.setItem('tabactiveName',activeName)
     }
 }
 

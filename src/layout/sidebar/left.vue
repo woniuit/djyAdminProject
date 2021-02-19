@@ -2,7 +2,7 @@
     <div class="sidebarItem">
         <el-menu
             background-color="#ffffff"
-            active-text-color="#65cea7"
+            active-text-color="#409EFF"
             unique-opened
             :collapse="isCollapsed"
             :collapse-transition="false"

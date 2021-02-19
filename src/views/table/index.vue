@@ -1,5 +1,7 @@
 <template>
-    <div>123</div>
+    <div>
+        <router-view />
+    </div>
 </template>
 
 <script>
@@ -12,8 +14,8 @@
         watch: {},
         created() {},
         mounted() {},
-        components: {},
         methods: {},
+        components: {},
     };
 </script>
 

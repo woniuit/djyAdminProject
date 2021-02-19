@@ -36,11 +36,15 @@
             }
         },
         created() {
+            
         },
         mounted() {},
-        watch: {},
+        watch: {
+
+        },
         methods: {
             handleClick(val) {
+                
                 this.$store.commit("sidebar/onActiveName", val.index);
                 this.$emit("handleClick", val);
                 // window.sessionStorage.removeItem("page");

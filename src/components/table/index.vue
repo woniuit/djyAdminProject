@@ -7,7 +7,7 @@
             :border="border"
             :fold-list="foldList"
             :row-style="toggleDisplayTr"
-            style="width: 100%"
+            style="width: 100%;"
             :header-cell-style="headercellstyle"
             class="small-padding fixed-width"
             :row-class-name="tableRowClassName"
@@ -99,7 +99,7 @@
             }, 100);
         },
         created() {
-            this.$store.commit("commons/clickIndexArr", []);
+            // this.$store.commit("commons/clickIndexArr", []);
         },
         methods: {
             // 计算表格合并
@@ -123,16 +123,16 @@
             },
 
             tableRowClassName({ row, rowIndex }) {
-                row.index = rowIndex;
-                if (
-                    this.$store.state.commons.clickIndexArr.indexOf(rowIndex) != -1
-                ) {
-                    return "click-row";
-                }
-                if (rowIndex % 2 != 0) {
-                    return "highlight-row";
-                }
-                return "";
+                // row.index = rowIndex;
+                // if (
+                //     this.$store.state.commons.clickIndexArr.indexOf(rowIndex) != -1
+                // ) {
+                //     return "click-row";
+                // }
+                // if (rowIndex % 2 != 0) {
+                //     return "highlight-row";
+                // }
+                // return "";
             },
             // 当选择项发生变化时会触发该事件
             handleSelectionChange(val) {
@@ -140,31 +140,32 @@
             },
             // 点击某一行触发 // 表格行高亮
             handlRowclick(row) {
-                let idx = this.indexarr.indexOf(row.index);
-                if (idx == -1) {
-                    this.indexarr.push(row.index);
-                    this.$store.commit("commons/clickIndexArr", this.indexarr);
-                } else {
-                    this.indexarr.splice(
-                        this.indexarr.findIndex((item) => item == row.index),
-                        1
-                    );
-                    this.$store.commit("commons/clickIndexArr", this.indexarr);
-                }
+                // let idx = this.indexarr.indexOf(row.index);
+                // if (idx == -1) {
+                //     this.indexarr.push(row.index);
+                //     this.$store.commit("commons/clickIndexArr", this.indexarr);
+                // } else {
+                //     this.indexarr.splice(
+                //         this.indexarr.findIndex((item) => item == row.index),
+                //         1
+                //     );
+                //     this.$store.commit("commons/clickIndexArr", this.indexarr);
+                // }
             },
             handlselection(row, selected) {
                 this.$emit("handlselection", row, selected);
             },
         },
         destroyed() {
-            this.$store.commit("commons/clickIndexArr", []);
-            this.indexarr = [];
+            // this.$store.commit("commons/clickIndexArr", []);
+            // this.indexarr = [];
         },
     };
 </script>
 <style scoped lang="less">
     .table {
         margin-top: 6px;
+        
         /deep/ .el-table__body tr.current-row > td {
             background-color: #ccccff;
         }

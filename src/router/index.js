@@ -7,7 +7,7 @@ const routes = [{
         path: '/',
         component: resolve => require(['@/layout'], resolve),
         title: "首页",
-        redirect: '/commons/defaults',
+        redirect: 'commons/table/defaults',
         hidden: false,
     },
     {
