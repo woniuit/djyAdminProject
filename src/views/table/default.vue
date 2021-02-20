@@ -1,14 +1,78 @@
 <template>
     <div>
+        <search
+            :selects="searchs.selects"
+            :inputs="searchs.inputs"
+            :picker="searchs.picker"
+            :btn="searchs.btn"
+        ></search>
         <tables :data="data" :col-configs="tableHeader" border> </tables>
     </div>
 </template>
 
 <script>
     import tables from "@/components/table";
+    import search from "@/components/search";
     export default {
         data() {
             return {
+                searchs: {
+                    inputs: [
+                        {
+                            title: "关键字查询：",
+                            model: "input1",
+                            width: 90,
+                            placeholder: "ID",
+                        },
+                    ],
+                    selects: [
+                        {
+                            filterable: true,
+                            title: "",
+                            model: "select1",
+                            width: 110,
+                            placeholder: "公司性质",
+                            change1: (val) => {
+                                // console.log(val);
+                            },
+                            options: [
+                                {
+                                    value: 1,
+                                    label: "外部",
+                                },
+                                {
+                                    value: 2,
+                                    label: "内部",
+                                },
+                            ],
+                        },
+                    ],
+                    picker: [
+                        {
+                            title: "收入所属期",
+                            model: "picker1",
+                            format: "yyyy-MM-dd HH:mm:ss",
+                            valueFormat: "yyyy-MM-dd HH:mm:ss",
+                            type: "datetimerange",
+                            change: (val) => {},
+                            input: (val) => {},
+                        },
+                    ],
+                    btn: [
+                        {
+                            name: "搜索",
+                            model: "btn1",
+                            type: "success",
+                            change: (val) => {},
+                        },
+                        {
+                            name: "重置",
+                            model: "btn2",
+                            type: "warning",
+                            change: (val) => {},
+                        },
+                    ],
+                },
                 tableHeader: [
                     { prop: "id", label: "ID", align: "center", show: true },
                     {
@@ -134,6 +198,7 @@
         methods: {},
         components: {
             tables,
+            search,
         },
     };
 </script>

@@ -1,6 +1,7 @@
-<!--djy--搜索条件   待优化-->
+<!--djy--搜索条件-->
 <template>
     <div class="search-bar">
+        <!-- 输入框 -->
         <div
             class="search-cont"
             v-for="(item, index) in inputs"
@@ -14,11 +15,14 @@
                     item.placeholder ? item.placeholder : '请输入内容'
                 "
                 :clearable="
-                    typeof item.clearable == 'undefined' ? false : item.clearable
+                    typeof item.clearable == 'undefined'
+                        ? false
+                        : item.clearable
                 "
             >
             </el-input>
         </div>
+        <!-- 下拉框 -->
         <div
             class="search-cont"
             v-for="(item, index) in selects"
@@ -49,6 +53,7 @@
                 </el-option>
             </el-select>
         </div>
+        <!-- 时间选择器 -->
         <div
             class="search-cont"
             v-for="(item, index) in picker"
@@ -57,11 +62,13 @@
             <div class="title" v-if="item.title">
                 {{ item.title }}
             </div>
+            <!-- format="yyyy-MM-dd HH:mm:ss"
+                value-format="yyyy-MM-dd HH:mm:ss" -->
             <el-date-picker
                 v-model="seachData.picker[item.model]"
-                type="datetimerange"
-                format="yyyy-MM-dd HH:mm:ss"
-                value-format="yyyy-MM-dd HH:mm:ss"
+                :type="item.type"
+                :format="item.format"
+                :value-format="item.valueFormat"
                 start-placeholder="开始日期"
                 end-placeholder="结束日期"
                 :picker-options="pickerOptions"
@@ -72,72 +79,10 @@
         </div>
         <div
             class="search-cont"
-            v-for="(item, index) in picker2"
+            v-for="(item, index) in btn"
             :key="item.model + '' + index"
         >
-            <div class="title" v-if="item.title">{{ item.title }}</div>
-            <el-date-picker
-                v-model="seachData.picker[item.model]"
-                type="date"
-                format="yyyy-MM-dd HH:mm:ss"
-                value-format="yyyy-MM-dd HH:mm:ss"
-                :placeholder="
-                    item.placeholder ? item.placeholder : '请输入内容'
-                "
-                :style="{ width: item.width + 'px' }"
-                @change="item.change ? item.change($event) : undefined"
-                @input="item.input ? item.input($event) : undefined"
-            />
-        </div>
-        <div
-            class="search-cont"
-            v-for="(item, index) in picker3"
-            :key="item.model + '' + index"
-        >
-            <div class="title" v-if="item.title">
-                {{ item.title }}
-            </div>
-            <el-date-picker
-                v-model="seachData.picker3[item.model]"
-                type="daterange"
-                range-separator="至"
-                format="yyyy-MM-dd"
-                value-format="yyyy-MM-dd"
-                :placeholder="
-                    item.placeholder ? item.placeholder : '请选择时间'
-                "
-                :style="{ width: item.width + 'px' }"
-                @change="item.change ? item.change($event) : undefined"
-                @input="item.input ? item.input($event) : undefined"
-            />
-        </div>
-        <div class="search-cont">
-            <el-button type="success" @click="onsearch" v-show="searchshow"
-                >搜索</el-button
-            >
-        </div>
-        <div class="search-cont">
-            <el-button type="warning" v-show="addshow" @click="onAdd"
-                >添加</el-button
-            >
-        </div>
-        <div class="search-cont">
-            <el-button type="warning" v-show="Importshow" @click="onImport">{{
-                Import
-            }}</el-button>
-        </div>
-        <div class="search-cont">
-            <el-button type="primary" @click="oninc" v-show="searchBtn.searchinc"
-                >导入</el-button
-            >
-        </div>
-        <div class="search-cont">
-            <el-button
-                type="info"
-                @click="onrandom"
-                v-show="searchBtn.randomshow"
-                >{{ searchBtn.random }}</el-button
-            >
+            <el-button :type="item.type">{{ item.name }}</el-button>
         </div>
     </div>
 </template>
@@ -160,41 +105,10 @@
                     return new Array();
                 },
             },
-            picker2: {
+            btn: {
                 default: () => {
                     return new Array();
                 },
-            },
-            picker3: {
-                default: () => {
-                    return new Array();
-                },
-            },
-            searchBtn: {
-                default: () => {
-                    return new Object();
-                },
-            },
-            button: {
-                default: () => {
-                    return new Object();
-                },
-            },
-            addshow: {
-                type: Boolean,
-                default: true,
-            },
-            searchshow: {
-                type: Boolean,
-                default: true,
-            },
-            Importshow: {
-                type: Boolean,
-                default: false,
-            },
-            Import: {
-                type: String,
-                default: "导入",
             },
         },
         data() {
@@ -203,7 +117,6 @@
                     input: {},
                     select: {},
                     picker: {},
-                    picker3: {},
                 },
                 pickerOptions: {
                     onPick: ({ maxDate, minDate }) => {
@@ -226,23 +139,7 @@
                 },
             };
         },
-        methods: {
-            oninc(){
-                this.$emit('oninc')
-            },
-            onsearch() {
-                this.$emit("onsearch", this.seachData);
-            },
-            onAdd() {
-                this.$emit("onAdd");
-            },
-            onImport() {
-                this.$emit("onImport");
-            },
-            onrandom() {
-                this.$emit("onrandom");
-            },
-        },
+        methods: {},
     };
 </script>
 <style scoped lang="less">
