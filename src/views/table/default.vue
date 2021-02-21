@@ -63,13 +63,13 @@
                             name: "搜索",
                             model: "btn1",
                             type: "success",
-                            change: (val) => {},
+                            event:'search'
                         },
                         {
                             name: "重置",
                             model: "btn2",
                             type: "warning",
-                            change: (val) => {},
+                            event:'reset'
                         },
                     ],
                 },
@@ -195,7 +195,14 @@
         watch: {},
         created() {},
         mounted() {},
-        methods: {},
+        methods: {
+            search(){
+                console.log('search')
+            },
+            reset(){
+                console.log('reset')
+            }
+        },
         components: {
             tables,
             search,

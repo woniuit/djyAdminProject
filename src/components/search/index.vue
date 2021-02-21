@@ -82,7 +82,11 @@
             v-for="(item, index) in btn"
             :key="item.model + '' + index"
         >
-            <el-button :type="item.type">{{ item.name }}</el-button>
+            <el-button
+                :type="item.type"
+                @click="btnclick(item.event)"
+                >{{ item.name }}</el-button
+            >
         </div>
     </div>
 </template>
@@ -139,7 +143,11 @@
                 },
             };
         },
-        methods: {},
+        methods: {
+            btnclick(event){
+                // console.log(event)
+            }
+        },
     };
 </script>
 <style scoped lang="less">
