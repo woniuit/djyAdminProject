@@ -23,7 +23,7 @@
                             model: "input1",
                             width: 90,
                             placeholder: "ID",
-                        },
+                        }
                     ],
                     selects: [
                         {
@@ -211,4 +211,7 @@
 </script>
 
 <style scoped lang="less">
+.test-color{
+    color: @color;
+}
 </style>
