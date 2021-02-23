@@ -1,0 +1,100 @@
+{
+    "deployForm": [{
+            "isShow": true,
+            "type": 1,
+            "inputType": "text",
+            "inputRow": 1,
+            "class": "w300",
+            "prop": "input1",
+            "label": "必填输入框",
+            "disabled": false,
+            "rule": {
+                "required": true,
+                "message": "请输入运营商公司",
+                "trigger": "blur"
+            }
+        },
+        {
+            "isShow": true,
+            "type": 1,
+            "inputType": "text",
+            "inputRow": 1,
+            "class": "w300",
+            "prop": "input2",
+            "label": "非必填输入框",
+            "disabled": false
+        },
+        {
+            "isShow": true,
+            "type": 3,
+            "class": "w300",
+            "prop": "select",
+            "filterable": true,
+            "clearable": true,
+            "multiple": true,
+            "placeholder": "请选择",
+            "label": "下拉选择",
+            "options": [{
+                    "value": "选项1",
+                    "label": "黄金糕"
+                },
+                {
+                    "value": "选项2",
+                    "label": "黄金"
+                }
+            ],
+            "rule": {
+                "required": true,
+                "message": "下拉选择",
+                "trigger": "blur"
+            }
+        },
+        {
+            "isShow": true,
+            "type": 2,
+            "disabled": false,
+            "class": "w300",
+            "prop": "radio",
+            "label": "单选框",
+            "radio": [{
+                    "label": 1,
+                    "name": "外部"
+                },
+                {
+                    "label": 2,
+                    "name": "内部"
+                }
+            ],
+            "rule": {
+                "required": true,
+                "message": "请选择单选框",
+                "trigger": "blur"
+            }
+        },
+        {
+            "isShow": true,
+            "type": "slot",
+            "slot": "multiple",
+            "label": "多选框",
+            "size": ""
+        },
+        {
+            "isShow": true,
+            "type": 4,
+            "class": "w300",
+            "prop": "publish_at",
+
+            "placeholder": "请选择时间",
+            "label": "时间",
+            "typetime": "date",
+            "format": "yyyy-MM-dd",
+            "valueformat": "yyyy-MM-dd",
+            "disabled": false,
+            "rule": {
+                "required": true,
+                "message": "请选择时间",
+                "trigger": "blur"
+            }
+        }
+    ]
+}

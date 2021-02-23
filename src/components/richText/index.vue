@@ -27,8 +27,8 @@
     import "../../../public/icons/default/icons.min.js";
     import "../../../public/plugins/code/plugin.min.js";
     import "../../../public/plugins/lineheight/plugin";
-    import * as config from "@/utils/config";
-    import { geturl } from "@/request/api/common/common.js";
+    // import * as config from "@/utils/config";
+    // import { geturl } from "@/request/api/common/common.js";
     export default {
         props: {
             value: {
@@ -42,7 +42,8 @@
         },
         data() {
             return {
-                uploadUrl: config.imgURL,
+                // uploadUrl: config.imgURL,
+                uploadUrl: '',
                 richTextValue: "",
             };
         },
