@@ -95,6 +95,13 @@ djy
                             :readonly="item.readonly"
                         ></tinymceEditor>
                     </div>
+                    <!-- 单个多选框 -->
+                    <el-checkbox
+                        v-if="item.type == 7"
+                        v-model="form[item.prop]"
+                        :disabled="item.disabled"
+                        >{{ item.name }}</el-checkbox
+                    >
                     <!-- 插槽 -->
                     <div v-if="item.type == 'slot'">
                         <div class="gameicon">{{ item.size }}</div>

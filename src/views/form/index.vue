@@ -59,7 +59,7 @@
             onsub() {
                 let vm = this;
                 console.log(vm.form);
-                console.log(vm.multiple);
+                // console.log(vm.multiple);
                 let flag = false;
                 vm.$refs["form"].$refs["form"].validate((valid) => {
                     flag = valid;

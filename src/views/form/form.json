@@ -80,6 +80,18 @@
         },
         {
             "isShow": true,
+            "type": 7,
+            "prop": "multiple2",
+            "label": "单个多选框",
+            "disabled": false,
+            "rule": {
+                "required": true,
+                "message": "请选择单个单选框",
+                "trigger": "blur"
+            }
+        },
+        {
+            "isShow": true,
             "type": 4,
             "class": "w300",
             "prop": "publish_at",
